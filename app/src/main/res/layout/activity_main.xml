@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
-        android:id="@+id/myTextview"
+        android:id="@+id/myTextView"
+        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_message" />
 
     <Button
         android:id="@+id/myButton"
+        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50px"
@@ -22,9 +24,9 @@
 
     <EditText
         android:id="@+id/myEditText"
+        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50px"
-        android:text="@string/editMessage" />
-
+        android:text="I am an edit text" />
 </LinearLayout>
