@@ -2,4 +2,5 @@
     <string name="app_name">Yuling Guo\'s Android Labs</string>
     <string name="hello_message">Hello world!</string>
     <string name="button_message">I\'am a button</string>
+    <string name="editMessage">I\'m a edit text</string>
 </resources>
