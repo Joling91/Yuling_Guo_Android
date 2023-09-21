@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
-
 
     <TextView
         android:id="@+id/myTextView"
@@ -18,53 +16,51 @@
         android:id="@+id/myButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50px"
         android:text="@string/button_message" />
 
     <EditText
         android:id="@+id/myEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50px"
         android:text="I am an edit text" />
 
     <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check this"
-            android:layout_marginTop="10dp" />
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Check this" />
 
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Click me"
-            android:layout_marginTop="10dp" />
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Click me" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Option 1"
-            android:layout_marginTop="10dp" />
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Option 1" />
+
     <ImageView
         android:id="@+id/myImage"
         android:src="@drawable/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:scaleX="0.5"
         android:scaleY="0.5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        />
 
     <ImageButton
+        android:id="@+id/myImageButton"
         android:src="@drawable/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/myImageButton"
+        android:layout_marginTop="10dp"
         android:scaleX="0.8"
-        android:scaleY="0.8"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"/>
+        android:scaleY="0.8" />
 </LinearLayout>

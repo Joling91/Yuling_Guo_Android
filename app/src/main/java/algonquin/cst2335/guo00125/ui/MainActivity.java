@@ -36,45 +36,35 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = binding.myTextView;
         Button b = binding.myButton;
         EditText et = binding.myEditText;
-        CheckBox checkBox = binding.checkBox;
-        Switch switch1 = binding.switch1;
-        RadioButton radioButton = binding.radioButton;
-        ImageView imageView = binding.myImage;
-        ImageButton imageButton = binding.myImageButton;
 
-        binding.checkBox.setOnCheckedChangeListener(
-                (btn, onOrOff) -> {
-                    model.onOrOff.postValue(onOrOff);
-                });
+        binding.checkBox.setOnCheckedChangeListener((btn, onOrOff) -> {
+            model.onOrOff.postValue(onOrOff);
+        });
         binding.switch1.setOnCheckedChangeListener((btn, onOrOff) -> {
             model.onOrOff.postValue(onOrOff);
         });
         binding.radioButton.setOnCheckedChangeListener((btn, onOrOff) -> {
             model.onOrOff.postValue(onOrOff);
         });
-        binding.myImageButton.setOnClickListener(clk -> {
-        });
+
         model.onOrOff.observe(this, newValue -> {
             binding.checkBox.setChecked(newValue);
             binding.switch1.setChecked(newValue);
             binding.radioButton.setChecked(newValue);
-            String toastMessage = "The value is now" + newValue;
+            String toastMessage = "The value now is " + newValue;
             Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
         });
-
-
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String string = et.getText().toString();
                 model.userString.postValue(string); // Use setValue() on MutableLiveData
                 b.setText("You clicked the button");
-
             }
         });
 
         model.userString.observe(this, s -> {
-            tv.setText("Your text is now:" + s);
+            tv.setText("Your text now is: " + s);
         });
 
         binding.myImageButton.setOnClickListener(view -> {
@@ -87,6 +77,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    }
+}
 
