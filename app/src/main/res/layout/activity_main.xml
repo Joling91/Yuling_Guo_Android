@@ -7,16 +7,15 @@
     android:orientation="vertical"
     tools:context=".ui.MainActivity">
 
+
     <TextView
         android:id="@+id/myTextView"
-        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_message" />
 
     <Button
         android:id="@+id/myButton"
-        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50px"
@@ -24,9 +23,48 @@
 
     <EditText
         android:id="@+id/myEditText"
-        android:textSize="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50px"
         android:text="I am an edit text" />
+
+    <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check this"
+            android:layout_marginTop="10dp" />
+
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click me"
+            android:layout_marginTop="10dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Option 1"
+            android:layout_marginTop="10dp" />
+    <ImageView
+        android:id="@+id/myImage"
+        android:src="@drawable/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <ImageButton
+        android:src="@drawable/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/myImageButton"
+        android:scaleX="0.8"
+        android:scaleY="0.8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>
