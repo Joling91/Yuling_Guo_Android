@@ -23,59 +23,19 @@ import algonquin.cst2335.guo00125.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
-    private MainViewModel model;
+    private MainViewModel viewModel;
 
-    @Override
+    //same as public static void main(String args[])
+    @Override //app starts here
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        model = new ViewModelProvider(this).get(MainViewModel.class);
-        setContentView(binding.getRoot());
+        binding = ActivityMainBinding.inflate( getLayoutInflater() );
 
-        TextView tv = binding.myTextView;
-        Button b = binding.myButton;
-        EditText et = binding.myEditText;
+        viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        //this is the only function call, loads stuff onto screen
+        setContentView( binding.getRoot() );
 
-        binding.checkBox.setOnCheckedChangeListener((btn, onOrOff) -> {
-            model.onOrOff.postValue(onOrOff);
-        });
-        binding.switch1.setOnCheckedChangeListener((btn, onOrOff) -> {
-            model.onOrOff.postValue(onOrOff);
-        });
-        binding.radioButton.setOnCheckedChangeListener((btn, onOrOff) -> {
-            model.onOrOff.postValue(onOrOff);
-        });
-
-        model.onOrOff.observe(this, newValue -> {
-            binding.checkBox.setChecked(newValue);
-            binding.switch1.setChecked(newValue);
-            binding.radioButton.setChecked(newValue);
-            String toastMessage = "The value now is " + newValue;
-            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
-        });
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String string = et.getText().toString();
-                model.userString.postValue(string); // Use setValue() on MutableLiveData
-                b.setText("You clicked the button");
-            }
-        });
-
-        model.userString.observe(this, s -> {
-            tv.setText("Your text now is: " + s);
-        });
-
-        binding.myImageButton.setOnClickListener(view -> {
-            int width = binding.myImageButton.getWidth();
-            int height = binding.myImageButton.getHeight();
-
-            // Show a Toast message with the width and height
-            String toastMessage = "The width = " + width + " and height = " + height;
-            Toast.makeText(MainActivity.this, toastMessage, Toast.LENGTH_SHORT).show();
-        });
 
     }
 }
-
