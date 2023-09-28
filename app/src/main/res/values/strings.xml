@@ -6,6 +6,8 @@
     <string name="button_name1"> Button 1 </string>
     <string name="button_name2"> Button 2 </string>
     <string name="button_name3"> Button 3 </string>
+    <string name="spin_flag" />
+    <string name="spin_message" />
 
 
 </resources>
