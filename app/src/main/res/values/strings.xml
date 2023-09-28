@@ -3,5 +3,9 @@
     <string name="hello_message">Hello world!</string>
     <string name="button_message">I\'am a button</string>
     <string name="editMessage">I\'m a edit text</string>
-    <string name="button_text" />
+    <string name="button_name1"> Button 1 </string>
+    <string name="button_name2"> Button 2 </string>
+    <string name="button_name3"> Button 3 </string>
+
+
 </resources>

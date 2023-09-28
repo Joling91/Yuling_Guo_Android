@@ -3,4 +3,9 @@
     <string name="app_name">Yuling Guo\'s Android Labs</string>
     <string name="hello_message">Boujour tout le monde!</string>
     <string name="button_message">Je suis un bouton</string>
+    <string name="button_name1"> Bouton 1 </string>
+    <string name="button_name2"> Bouton 2 </string>
+    <string name="button_name3"> Bouton 3 </string>
+
+
 </resources>

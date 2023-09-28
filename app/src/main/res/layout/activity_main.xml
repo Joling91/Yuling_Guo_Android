@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="220dp"
-        android:text="Button"
+        android:text="@string/button_name1"
 
         android:nextFocusUp="@id/button"
         android:nextFocusDown="@id/button"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Button"
+        android:text="@string/button_name2"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:text="Button"
+        android:text="@string/button_name3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button2"
@@ -57,5 +57,5 @@
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:srcCompat="@drawable/image" />
+        app:srcCompat="@drawable/flag" />
 </androidx.constraintlayout.widget.ConstraintLayout>
