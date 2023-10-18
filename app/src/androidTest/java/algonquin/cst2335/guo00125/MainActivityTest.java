@@ -166,9 +166,6 @@ public class MainActivityTest {
         ViewInteraction appCompatEditText = onView( withId(R.id.editText) );
         //type in password123#$*
 
-
-
-
         appCompatEditText.perform(replaceText("Password123#")) ;
 
         //find the button
