@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class ChatRoom extends AppCompatActivity {
     ActivityChatRoomBinding binding;
@@ -20,7 +21,8 @@ public class ChatRoom extends AppCompatActivity {
             @NonNull
             @Override
             public MyRowHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                return null;
+                SentRowLayoutBinding binding = SentRowLayoutBinding.infalte(getLayoutInflater(), parent, false);
+                return new MyRowHolder(binding.getRoot());
             }
 
             @Override
@@ -36,8 +38,13 @@ public class ChatRoom extends AppCompatActivity {
     };
     }
     class MyRowHolder extends RecyclerView.ViewHolder {
-        public MyRowHolder(@NonNull View itemView) {
-            super(itemView);
+        TextView messageView;
+        TextView timeView;
+        public MyRowHolder(@NonNull View theRootConstraintLayout) {
+            super(theRootConstraintLayout);
+
+            messageView = theRootConstraintLayout.findViewById(R.id.textView);
+            timeView = theRootConstraintLayout.findViewById(R.id.textView2)
         }
     }
 }
