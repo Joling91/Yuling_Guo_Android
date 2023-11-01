@@ -42,6 +42,7 @@ public class ChatRoom extends AppCompatActivity {
 
             @Override
             public int getItemCount() {
+
                 return messages.size();
             }
         });
