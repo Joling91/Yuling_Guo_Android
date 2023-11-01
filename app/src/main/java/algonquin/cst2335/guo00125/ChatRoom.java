@@ -9,7 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import algonquin.cst2335.guo00125.databinding.ActivityChatRoomBinding;
+import algonquin.cst2335.guo00125.databinding.SentMessageBinding;
+
 public class ChatRoom extends AppCompatActivity {
+    ArrayList<String> messages = new ArrayList<>();
     ActivityChatRoomBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +23,15 @@ public class ChatRoom extends AppCompatActivity {
 
         binding = ActivityChatRoomBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.sendButton.setOnClickListener(cli -> {
+            messages.add(binding.textInput.getText().toString());
+            binding.textInput.setText("");
+        });
         binding.myRecycler.setAdapter(new RecyclerView.Adapter<MyRowHolder>() {
             @NonNull
             @Override
             public MyRowHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                SentRowLayoutBinding binding = SentRowLayoutBinding.infalte(getLayoutInflater(), parent, false);
+                SentMessageBinding binding = SentMessageBinding.inflate(getLayoutInflater(), parent, false);
                 return new MyRowHolder(binding.getRoot());
             }
 
@@ -32,7 +42,7 @@ public class ChatRoom extends AppCompatActivity {
 
             @Override
             public int getItemCount() {
-                return 0;
+                return messages.size();
             }
         });
     };
@@ -44,7 +54,6 @@ public class ChatRoom extends AppCompatActivity {
             super(theRootConstraintLayout);
 
             messageView = theRootConstraintLayout.findViewById(R.id.textView);
-            timeView = theRootConstraintLayout.findViewById(R.id.textView2)
+            timeView = theRootConstraintLayout.findViewById(R.id.textView2);
         }
     }
-}
