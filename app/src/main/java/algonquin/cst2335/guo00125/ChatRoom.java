@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import algonquin.cst2335.data.ChatRoomViewModel;
 import algonquin.cst2335.guo00125.databinding.ActivityChatRoomBinding;
+import algonquin.cst2335.guo00125.databinding.ReceiveMessageBinding;
 import algonquin.cst2335.guo00125.databinding.SentMessageBinding;
 
 public class ChatRoom extends AppCompatActivity {
