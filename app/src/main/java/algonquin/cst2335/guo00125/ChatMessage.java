@@ -11,11 +11,11 @@ public class ChatMessage {
     public long id;
 
     @ColumnInfo(name="Message")
-    private String message;
+    public String message;
     @ColumnInfo(name="TimeSent")
-    private String timeSent;
+    public String timeSent;
     @ColumnInfo(name="IsSentButton")
-    private boolean isSentButton;
+    public boolean isSentButton;
 
     public ChatMessage(String message, String timeSent, boolean isSentButton) {
         this.message = message;

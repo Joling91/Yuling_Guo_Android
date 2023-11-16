@@ -2,4 +2,6 @@
     <string name="app_name">Yuling Guo\'s Android Labs</string>
     <string name="hello_message">Hello world!</string>
     <string name="button_message">I\'am a button</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
