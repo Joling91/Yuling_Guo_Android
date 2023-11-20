@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -38,6 +41,10 @@ public class ChatRoom extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        binding = ActivityChatRoomBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setSupportActionBar(binding.myToolbar);
 
         chatModel = new ViewModelProvider(this).get(ChatRoomViewModel.class);
         chatModel.selectedMessage.observe(this, (selectedMessage) -> {
@@ -68,13 +75,6 @@ public class ChatRoom extends AppCompatActivity {
                 runOnUiThread( () ->  binding.recyclerView.setAdapter( myAdapter )); //You can then load the RecyclerView
             });
         }
-
-
-        //database
-
-
-        binding = ActivityChatRoomBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
 
 
         binding.sendButton.setOnClickListener(clk -> {
@@ -234,4 +234,28 @@ public class ChatRoom extends AppCompatActivity {
             timeText =itemView.findViewById(R.id.time);
         }
     }
+   @Override
+   public boolean onCreateOptionsMenu(Menu menu) {
+       getMenuInflater().inflate(R.menu.my_menu, menu);
+
+       super.onCreateOptionsMenu(menu);
+       return true;
+   }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch( item.getItemId() )
+        {
+            case R.id.item_1:
+                Snackbar.make(binding.myToolbar, "You clicked on the delete button", Snackbar.LENGTH_LONG).show();
+                break;
+
+                case.R.id.about_item:
+                    Toast.makeText(this,"Version 1.0, created by Yuling Guo",Toast.LENGTH_LONG).show();
+                    break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
