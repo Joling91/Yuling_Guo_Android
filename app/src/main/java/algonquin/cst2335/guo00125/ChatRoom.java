@@ -244,18 +244,15 @@ public class ChatRoom extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch( item.getItemId() )
-        {
+        switch (item.getItemId()) {
             case R.id.item_1:
                 Snackbar.make(binding.myToolbar, "You clicked on the delete button", Snackbar.LENGTH_LONG).show();
                 break;
 
-                case.R.id.about_item:
-                    Toast.makeText(this,"Version 1.0, created by Yuling Guo",Toast.LENGTH_LONG).show();
-                    break;
+            case R.id.about_item:
+                Toast.makeText(this, "Version 1.0, created by Yuling Guo", Toast.LENGTH_LONG).show();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
