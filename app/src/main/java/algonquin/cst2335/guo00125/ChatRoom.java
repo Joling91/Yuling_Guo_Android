@@ -246,7 +246,41 @@ public class ChatRoom extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.item_1:
-                Snackbar.make(binding.myToolbar, "You clicked on the delete button", Snackbar.LENGTH_LONG).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Do you want to delete the selected message?");
+                builder.setTitle("Delete Message")
+                        .setPositiveButton("Yes", (dialog, cl) -> {
+                            // Get the selected message
+                            ChatMessage selectedMessage = chatModel.selectedMessage.getValue();
+                            if (selectedMessage != null) {
+                                // Delete the message from the database
+                                Executors.newSingleThreadExecutor().execute(() -> {
+                                    mDAO.deleteMessage(selectedMessage);
+                                });
+
+                                // Remove the message from the list and update the RecyclerView
+                                messages.remove(selectedMessage);
+                                myAdapter.notifyDataSetChanged();
+
+                                // Show a Snackbar with an undo option
+                                Snackbar.make(binding.getRoot(), "Message deleted", Snackbar.LENGTH_LONG)
+                                        .setAction("Undo", clk2 -> {
+                                            // Insert the deleted message back to the database
+                                            Executors.newSingleThreadExecutor().execute(() -> {
+                                                long id = mDAO.insertMessage(selectedMessage);
+                                                selectedMessage.id = id;
+                                                runOnUiThread(() -> {
+                                                    // Add the message back to the list and update the RecyclerView
+                                                    messages.add(selectedMessage);
+                                                    myAdapter.notifyDataSetChanged();
+                                                });
+                                            });
+                                        })
+                                        .show();
+                            }
+                        })
+                        .setNegativeButton("No", (dialog, cl) -> {})
+                        .create().show();
                 break;
 
             case R.id.about_item:
