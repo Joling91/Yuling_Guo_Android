@@ -22,6 +22,7 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import algonquin.cst2335.guo00125.databinding.ActivityMainBinding;
 
 
 
@@ -191,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
             }
             binding.description.setText(description);
             binding.description.setVisibility(View.VISIBLE);
+
 
 //image request
             String pathname = getFilesDir() + "/" + iconname + ".png";
